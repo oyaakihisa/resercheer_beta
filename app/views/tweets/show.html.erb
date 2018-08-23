@@ -1,0 +1,133 @@
+<div class="show">
+  
+ <div class = "picture_profile clearfix">
+    <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
+      <% if user_signed_in? && current_user.id == @tweet.user_id %>
+        <div class="more">
+          <span><%= image_tag 'arrow_top.png' %></span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <%= simple_format(@tweet.text) %>
+      <span class="name">
+        <a href="/users/<%= @tweet.user.id %>">
+          <span>投稿者</span><%= @tweet.user.nickname %>
+        </a>
+      </span>
+    </div>
+  
+    <div class="profile">
+    <h1>プロフィール</h1>
+      <ul>
+        <li>
+          <nobr>氏名：</nobr><%=  simple_format(@tweet.user.nickname) %>
+        </li>
+        <li>
+          <nobr>座右の銘：</nobr><%=  simple_format(@tweet.policy) %>
+        </li>
+        <li>
+          <nobr>誕生日：</nobr>
+          <%= simple_format(@tweet.birthday) %>
+        </li> 
+        <li>
+          <nobr>趣味：</nobr>
+          <%= simple_format(@tweet.hobby) %>
+        </li>
+        <li>
+          <nobr>コメント：</nobr>
+          <%= simple_format(@tweet.comment) %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+ <div class="cheer_add_comment clearfix">  
+    <div class="cheer"> 
+      <h1><%= "#{@tweet.user.nickname}のcheer team" %></h1>  
+    
+      <div class="cheers">   
+        <h4><Cheer一覧＞</h4>
+        <% if @cheers %>
+          <% @cheers.each do |cheer| %>
+            <p>
+              <strong><%= link_to cheer.user.nickname, "/users/#{cheer.user_id}" %>：</strong>
+              <%= cheer.updated_at %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <%= link_to "Cheerする!", "/tweets/#{@tweet.id}/cheers/#{@tweet.user_id}/edit", class: 'post' %>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログインしてCheerする!", new_user_session_path, class: 'post' %>
+          </div>
+        <% end %>
+    </div>
+  
+    <div class="Advertisement"> 
+     <h1>告知</h1>
+      <% if user_signed_in? && current_user.id == @tweet.user_id %> 
+    
+        <%= form_tag("/tweets/#{@tweet.id}/adds", method: :post) do %>
+          <textarea name="text" placeholder="告知をする" rows="2" cols="30"></textarea>
+          <input type="submit" value="告知を投稿">
+        <% end %>
+      <% end %>
+      <div class="adds">   
+        <h4>＜告知＞</h4>
+        <% if @adds %>
+          <% @adds.each do |add| %>
+            <p>
+              <%= add.updated_at %> <%= add.text %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div> 
+  
+    <div class="comment"> 
+    <!-- ここからフォーム -->
+      <% if current_user %>
+        <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
+          <textarea name="text" placeholder="コメントする" rows="2" cols="30"></textarea>
+          <input type="submit" value="SENT">
+        <% end %>
+      <% end %>
+      <div class="comments">   
+        <h4>＜コメント一覧＞</h4>
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <p>
+              <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+              <%= comment.text %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+</div>

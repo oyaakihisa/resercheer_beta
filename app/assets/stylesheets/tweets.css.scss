@@ -1,0 +1,107 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ .content_post{
+      width: 300px;
+      height: 500px;
+      font-size: 10px;
+      border: 1px solid black;     
+ }
+ 
+ .lucky_title h2{
+      font-size: 40px;
+ }
+ 
+ li {
+   font-size: 20px;
+ }
+ h2{
+   text-align:center;
+ }
+ 
+ .lucky_resercher{
+   height: 500px;
+   width: 400px;
+   margin: 0 auto;
+ }
+ 
+ .ikatui{
+   background-color: white;
+   width: 1200px;
+   margin: 0 auto;
+ }
+ 
+ .ikatui h2{
+  font-size: 40px;
+
+ }
+
+ .ikemen{
+   background-color: white;
+   width: 1200px;
+   margin: 0 auto;
+ }
+ 
+  .ikemen h2{
+  font-size: 40px;
+
+ }
+
+.content_post{
+   float:left;
+ }
+ 
+ 
+ 
+ .picture_profile{
+
+   width:900px;
+   height:600px;
+   margin: 0px auto;
+ }
+ 
+ 
+ 
+ .profile{
+    background-color: white;
+    width:500px;
+    height:500px;
+    float:right;
+    margin: 40px auto;
+ }
+ 
+ .clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.cheer_add_comment{
+   background-color: accent;
+   width:1000px;
+   height:600px;
+   margin: 0px auto;  
+}
+
+.comment{
+  width:700px;
+  height:700px;
+  margin: 0px auto; 
+}
+
+.Advertisement{
+  background-color:white;
+  width:400px;
+  height:300px;
+  float:right;
+  border: 1px solid black;
+
+}
+
+.cheer{
+  background-color:white;
+  width:500px;
+  height:300px; 
+  float:left;
+  border: 1px solid black;
+}

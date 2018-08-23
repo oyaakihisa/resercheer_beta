@@ -1,0 +1,35 @@
+<div class="contents_row" >
+  
+  <div class=lucky_title>
+  <h2>本日のラッキーresercher!</h2>
+  <p>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　※1万円進呈</p>
+  </div>
+  <div class="lucky_resercher" style="background-image: url(<%= @lucky_resercher.image %>);">
+    <%= simple_format(@lucky_resercher.text) %>
+    <span class="name"><%= "田中大輝" %></span>
+  </div>
+  
+  <div class = "ikatui">
+    <h2>いかつい系resercher!</h2>
+    <ul>
+      <li>
+        <% @tweets.each do |tweet| %>
+          <%= render partial: "tweet", locals: { tweet: tweet } %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  
+  <div class = "ikemen">
+    <h2>内気系resercher!</h2>
+    <ul>
+      <li>
+        <% @tweets.each do |tweet| %>
+          <%= render partial: "tweet", locals: { tweet: tweet } %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+  <%= paginate(@tweets) %>
+</div>

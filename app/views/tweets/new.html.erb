@@ -1,0 +1,17 @@
+<div class="contents row">
+  <div class="container">
+  <%= form_tag('/tweets', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <input type="text" name="name" placeholder="Nickname">
+    <input type="text" name="image" placeholder="Image Url">
+    <input type="text" name="birthday" placeholder="誕生日">
+    <input type="text" name="policy" placeholder="座右の銘">    
+    <textarea name="hobby" placeholder="趣味" rows="10" cols="30"></textarea>
+    <input type="text" name="comment" placeholder="何か一言">   
+    <textarea name="comment" placeholder="コメントを入力" rows="10" cols="30"></textarea>
+    <input type="submit" value="SENT">
+  <% end %>
+  </div>
+</div>

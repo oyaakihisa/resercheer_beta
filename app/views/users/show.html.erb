@@ -1,0 +1,7 @@
+<div class="contents row">
+  <p><%= @nickname %>さんがcheerしている研究者一覧</p>
+  <% @cheers.each do |cheer| %>
+    <%= render partial: "tweets/tweet", locals: { tweet: cheer } %>
+  <% end %>
+  <%= paginate(@cheers) %>
+</div>
