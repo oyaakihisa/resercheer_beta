@@ -1,10 +1,10 @@
 <div class="contents row">
-  <%= form_tag("/tweets/#{@cheer.tweet_id}/cheers", method: :post ) do %>
+  <%= form_tag("/tweets/#{@tweet.id}/cheers", method: :post ) do %>
     <h1>
       Cheerする
     </h1>
     <input type="integer" name="cheer_money"  placeholder="金額" autofocus="true">
     <p>円Cheerする</p>
     <input type="submit" value="OK">
-  <% end %>
+  <% end %> 
 </div>

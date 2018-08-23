@@ -1,7 +1,7 @@
 class CheersController < ApplicationController
   
-  def edit
-    @cheer = Cheer.find(params[:id])
+  def new
+    @tweet = Tweet.find(params[:tweet_id])
   end
   
 

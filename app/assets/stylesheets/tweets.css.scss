@@ -8,6 +8,18 @@
       border: 1px solid black;     
  }
  
+  .content_post .name p{
+  font-size: 50px;
+  color:white
+
+ }
+ 
+ .content_post .name a{
+  color: white;
+  font-size: 50px;
+ }
+ 
+ 
  .lucky_title h2{
       font-size: 40px;
  }
@@ -23,6 +35,16 @@
    height: 500px;
    width: 400px;
    margin: 0 auto;
+ }
+ 
+ .lucky_resercher .name{
+   color:white;
+   font-size:40px;
+ }
+ 
+  .lucky_resercher p{
+   color:white;
+   font-size:40px;
  }
  
  .ikatui{
@@ -55,8 +77,8 @@
  
  .picture_profile{
 
-   width:900px;
-   height:600px;
+   width:1100px;
+   height:700px;
    margin: 0px auto;
  }
  
@@ -64,8 +86,8 @@
  
  .profile{
     background-color: white;
-    width:500px;
-    height:500px;
+    width:700px;
+    height:600px;
     float:right;
     margin: 40px auto;
  }

@@ -15,22 +15,15 @@
           </ul>
         </div>
       <% end %>
-      <%= simple_format(@tweet.text) %>
-      <span class="name">
-        <a href="/users/<%= @tweet.user.id %>">
-          <span>投稿者</span><%= @tweet.user.nickname %>
-        </a>
-      </span>
+
+
     </div>
   
     <div class="profile">
     <h1>プロフィール</h1>
       <ul>
         <li>
-          <nobr>氏名：</nobr><%=  simple_format(@tweet.user.nickname) %>
-        </li>
-        <li>
-          <nobr>座右の銘：</nobr><%=  simple_format(@tweet.policy) %>
+          <%= simple_format(@tweet.user.nickname) %>
         </li>
         <li>
           <nobr>誕生日：</nobr>
@@ -57,15 +50,15 @@
         <% if @cheers %>
           <% @cheers.each do |cheer| %>
             <p>
-              <strong><%= link_to cheer.user.nickname, "/users/#{cheer.user_id}" %>：</strong>
               <%= cheer.updated_at %>
+              <strong>に<%= link_to cheer.user.nickname, "/users/#{cheer.user_id}" %>さんがcheerしました</strong>
             </p>
           <% end %>
         <% end %>
       </div>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to "Cheerする!", "/tweets/#{@tweet.id}/cheers/#{@tweet.user_id}/edit", class: 'post' %>
+            <%= link_to "Cheerする!", "/tweets/#{@tweet.id}/cheers/new", class: 'get' %>
           </div>
         <% else %>
           <div class="grid-6">
@@ -88,7 +81,7 @@
         <% if @adds %>
           <% @adds.each do |add| %>
             <p>
-              <%= add.updated_at %> <%= add.text %>
+             <%= add.text %>
             </p>
           <% end %>
         <% end %>
